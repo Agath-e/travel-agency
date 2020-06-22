@@ -9,7 +9,7 @@ describe('Component TripSummary', () => {
     expect(component).toBeTruthy();
     console.log(component.debug());
   }); 
-
+  
   it('generate a correct link', () => {
     const correctLink = 'abc';
     const component = shallow(<TripSummary id={correctLink} />);
@@ -45,7 +45,11 @@ describe('Component TripSummary', () => {
     const expectedTags = ['one', 'two', 'three'];
 
     const component = shallow(<TripSummary tags={expectedTags} />);
-    expect(component.find('.tag').at(0).text().tag).to.equal(expectedTags);
+    
+    for(let tag in expectedTags){
+      const renderedTag = component.find('.tag').at(tag).text();
+      expect(renderedTag).toEqual(expectedTags[tag]);
+    }
   });
 
   it('should throw error without tags in div', () => {
