@@ -160,22 +160,11 @@ describe('Component OrderOption', () => {
           break;
         }
         case 'checkboxes': {
-          it('should render div with class checkboxes and input with type checkbox', () => {
-            const classCheckBoxes = renderedSubcomponent.find('.checkboxes');
-            expect(classCheckBoxes.length).toBe(1);
-          
-            const checkBoxInput = classCheckBoxes.find('input[type="checkbox"]').length;
-            expect(checkBoxInput.length).toBe(mockProps.values.length);
-
-            expect(checkBoxInput.at(0).prop('value')).toBe(mockProps.values[0].id);
-            expect(checkBoxInput.at(1).prop('value')).toBe(mockProps.values[1].id);
-        
-          });
-
-          it('should run setOrderOption function on change', () => {
-            renderedSubcomponent.find(`input[value="${testValue}"]`).simulate('change', {currentTarget: {checked: true}});
+          it('should run setOrderIcon function on change ', () => {
+            // console.log('------------------',renderedSubcomponent.debug());
+            renderedSubcomponent.find({value:testValue}).simulate('change', {currentTarget: {checked: true} });
             expect(mockSetOrderOption).toBeCalledTimes(1);
-            expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: [mockProps.currentValue, testValue] });
+            expect(mockSetOrderOption).toBeCalledWith({[mockProps.id]:[mockProps.currentValue, testValue] });
           });
           break;
         }
