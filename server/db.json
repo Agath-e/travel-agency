@@ -11,6 +11,55 @@
       "start-date": "",
       "totalCost": "$29,819",
       "id": 1
+    },
+    {
+      "car-rental": "full",
+      "accommodation": "suite",
+      "features": [
+        "security"
+      ],
+      "adults": 1,
+      "children": 0,
+      "name": "Agata",
+      "contact": "79480308603",
+      "start-date": "2020-06-25T14:33:47.247Z",
+      "totalCost": "$26,769",
+      "id": 2
+    },
+    {
+      "car-rental": "",
+      "accommodation": "hotel",
+      "features": [
+        "pool"
+      ],
+      "adults": 1,
+      "children": 0,
+      "name": "pooi",
+      "contact": "6876796",
+      "start-date": "2020-06-25T14:45:12.045Z",
+      "totalCost": "$16,539",
+      "tripName": "Pleasing outing in brilliant Venezuela (Bolivarian Republic of)",
+      "tripId": "5cc1d101d4646f89f3e65aa9",
+      "tripCode": "VEN",
+      "id": 3
+    },
+    {
+      "car-rental": "",
+      "accommodation": "hotel",
+      "features": [
+        "pool",
+        "kitchen"
+      ],
+      "adults": "4",
+      "children": "2",
+      "name": "UIlak",
+      "contact": "6876796",
+      "start-date": "2020-06-25T14:45:12.045Z",
+      "totalCost": "$85,195",
+      "tripName": "Pleasing outing in brilliant Venezuela (Bolivarian Republic of)",
+      "tripId": "5cc1d101d4646f89f3e65aa9",
+      "tripCode": "VEN",
+      "id": 4
     }
   ]
 }
