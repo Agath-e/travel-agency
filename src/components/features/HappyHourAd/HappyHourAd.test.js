@@ -109,3 +109,9 @@ describe('Component HappyHourAd during Happy Hour', () => {
 
 
 });
+
+describe('Component HappyHourAd before Happy Hour', () => {
+  checkDescriptionAfterTime('11:57:58', 2, '120');
+  checkDescriptionAfterTime('11:59:58', 1, '1');
+  checkDescriptionAfterTime('11:59:58', 3, mockProps.promoDescription);
+});
