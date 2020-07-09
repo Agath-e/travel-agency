@@ -23,10 +23,12 @@ class HappyHourAd extends React.Component {
 
   render(){
     
+    const openHappyHour = this.getCountdownTime();
+
     return (
       <div>
         <h3 className='title'>Happy Hour</h3>
-        <div className='promoDescription'>{this.getCountdownTime()}</div>
+        <div className='promoDescription'>{openHappyHour > 82800 ? 'It`s your time! Take advantage of Happy Hour! All offers 20% off!' : openHappyHour }</div>
       </div>
     );
   }
