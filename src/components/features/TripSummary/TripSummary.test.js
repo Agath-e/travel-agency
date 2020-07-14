@@ -31,7 +31,7 @@ describe('Component TripSummary', () => {
 
   it('should render correct props name, cost and days', () => {
     const expectedName = 'name';
-    const expectedCost = 'cost';
+    const expectedCost = '$0';
     const expectedDays = 1;
     const expectedTags = ['one', 'two', 'three'];
     const component = shallow(<TripSummary name={expectedName} cost={expectedCost} days={expectedDays} tags={expectedTags}/>);

@@ -13,6 +13,7 @@ import ListItem from '../../common/ListItem/ListItem';
 import OrderForm from '../../features/OrderForm/OrderFormContainer';
 import styles from './Trip.scss';
 import {Grid, Row, Col} from 'react-flexbox-grid';
+import {promoPrice} from '../../../utils/promoPrice';
 
 const Trip = ({error, name, image, cost, days, description, country, intro, id}) => {
   if(error) return <NotFound />;
@@ -33,7 +34,7 @@ const Trip = ({error, name, image, cost, days, description, country, intro, id})
               </div>
               <List variant='light'>
                 <ListItem title={`<strong>Duration:</strong> ${days} days`} icon='calendar-alt' />
-                <ListItem title={`<strong>Price:</strong> from ${cost}`} icon='money-bill-wave' />
+                <ListItem title={`<strong>Price</strong> from: ${promoPrice(cost, 20)}`} icon='money-bill-wave' />
               </List>
             </Col>
           </Row>
@@ -50,6 +51,10 @@ const Trip = ({error, name, image, cost, days, description, country, intro, id})
       <Grid>
         <Row>
           <Col xs={12}>
+            <div className={styles.prices}>
+              <p className={styles.lowerPrice}>Price from: {promoPrice(cost, 20)}</p>
+              <p className={styles.standardPrice}>Standard price: {cost}</p>
+            </div>
             <PageTitle text='Trip details' />
             {HTMLParser(description)}
           </Col>

@@ -8,3 +8,18 @@
 .intro {
   margin: 0 0 ($base-size * 3) 0;
 }
+.prices {
+  margin: 0;
+
+  .lowerPrice {
+    font-size: 24px;
+    font-weight: bold;
+    color: $color-dark;
+  }
+
+  .standardPrice {
+    font-size: 18px;
+    color: #808080;
+
+  }
+}
