@@ -14,8 +14,13 @@ import OrderForm from '../../features/OrderForm/OrderFormContainer';
 import styles from './Trip.scss';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 import {promoPrice} from '../../../utils/promoPrice';
+import {getCountdownTime} from '../../../utils/getCountdownTime';
+
 
 const Trip = ({error, name, image, cost, days, description, country, intro, id}) => {
+
+  const openHappyHour = getCountdownTime();
+
   if(error) return <NotFound />;
   else return (
     <Section>
@@ -34,7 +39,7 @@ const Trip = ({error, name, image, cost, days, description, country, intro, id})
               </div>
               <List variant='light'>
                 <ListItem title={`<strong>Duration:</strong> ${days} days`} icon='calendar-alt' />
-                <ListItem title={`<strong>Price</strong> from: ${promoPrice(cost, 20)}`} icon='money-bill-wave' />
+                <ListItem title={`<strong>Price</strong> from: ${openHappyHour > 82800 ? promoPrice(cost, 20) : cost}`} icon='money-bill-wave' />
               </List>
             </Col>
           </Row>
@@ -50,11 +55,13 @@ const Trip = ({error, name, image, cost, days, description, country, intro, id})
       </Grid>
       <Grid>
         <Row>
-          <Col xs={12}>
-            <div className={styles.prices}>
-              <p className={styles.lowerPrice}>Price from: {promoPrice(cost, 20)}</p>
-              <p className={styles.standardPrice}>Standard price: {cost}</p>
-            </div>
+          <Col xs={12}> 
+            {openHappyHour > 82800 && (
+              <div className={styles.prices}>
+                <p className={styles.lowerPrice}>Price from: {promoPrice(cost, 20)}</p>
+                <p className={styles.standardPrice}>Standard price: {cost}</p>
+              </div>
+            )}
             <PageTitle text='Trip details' />
             {HTMLParser(description)}
           </Col>
